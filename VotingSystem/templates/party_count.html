@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Count</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Party Count</h1>
+    <table>
+        <tr>
+            <th>Party</th>
+            <th>Count</th>
+        </tr>
+        {% for party_count in party_counts %}
+        <tr>
+            <td>{{ party_count.party }}</td>
+            <td>{{ party_count.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'home' %}">Return to Home</a>
+</body>
+</html>
